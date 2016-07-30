@@ -24,7 +24,7 @@ $(document).ready(function() {
     };
 
     firebaseApp = firebase.initializeApp(config);
-    var newsItemsRef = firebase.database().ref().limitToLast(250);
+    var newsItemsRef = firebase.database().ref().limitToLast(100);
 
     /*
      *
