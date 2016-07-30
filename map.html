@@ -23,7 +23,7 @@
   </head>
   <body>
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron row">
             <h1>News Data Mashup</h1>
             <p>Instructions</p>
             <ol>
@@ -33,7 +33,45 @@
             </ol>
         </div>
 
-        <div id="map" style="height: 800px;"></div>
+        <div class='row'>
+            <div class='col-xs-4 col-sm-3 col-md-2'>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="filter" value="events" checked />
+                        Events
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="filter" value="accidents" />
+                        Accidents
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="filter" value="disasters" />
+                        Disasters
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="filter" value="sciences" />
+                        Science Breakthrough
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="filter" value="mysteries" />
+                        Mysterious events
+                    </label>
+                </div>
+            </div>
+            <div class='col-xs-8 col-sm-9 col-md-10' id="map" style="height: 800px;">
+                
+            </div>
+        </div>
+
+        <!-- <div id="map" style="height: 800px;"></div> -->
 
     </div>
 
