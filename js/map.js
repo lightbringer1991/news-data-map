@@ -50,7 +50,7 @@ $(document).ready(function() {
                             '<p>Station: ' + newsItem.Station + '</p>' +
                             '<img class="img-responsive" src="' + image + '">'
 
-            ).openPopup();
+            );
         }
     }
 });
