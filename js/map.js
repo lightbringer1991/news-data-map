@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+    /*
+     *
+     * Initialize map
+     *
+     */
     var map = L.map('map').setView([-37.560906, 143.828050], 9);
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -8,46 +13,24 @@ $(document).ready(function() {
 
     // Initialize Firebase
     var config = {
-                apiKey: "AIzaSyDhv0JZOeI6qpcb5ecuxybtFep5i68id3k",
-                authDomain: "newsdatamashup.firebaseapp.com",
-                databaseURL: "https://newsdatamashup.firebaseio.com",
-                storageBucket: "newsdatamashup.appspot.com",
+                    apiKey: "AIzaSyDhv0JZOeI6qpcb5ecuxybtFep5i68id3k",
+                    authDomain: "newsdatamashup.firebaseapp.com",
+                    databaseURL: "https://newsdatamashup.firebaseio.com",
+                    storageBucket: "newsdatamashup.appspot.com",
                 };
+
     var firebaseApp = firebase.initializeApp(config);
 
-    var itemsRef = firebaseApp.database().ref();
+    var newsItems = firebase.database().ref('newsdatamashup');
 
-    var items = [];
-    itemsRef.on('value', (snap) => {
-
-        // get children as an array
-
-        snap.forEach((child) => {
-            items.push({
-            title: child.val().title,
-            _key: child.key
-            });
-        });
-
-        /*
-        this.setState({
-            dataSource: this.state.dataSource.cloneWithRows(items)
-        });
-        */
+    newsItems.on('child_added', function(data) {
+        var data = data.val() || 'Anonymous';
+        console.log(data);
     });
 
-    console.log(items);
-
-
-    // itemsRef = firebaseApp.database().ref();
-
-    // console.log(firebase.database().limitToLast(100));
-
-     /*
-    firebase.database().ref('newsdatamashup/775').once('value').then(function(snapshot) {
-      var keywords = snapshot.val().keywords;
-      console.log(snapshot.val());
+    newsItems.once('value').then(function(snapshot) {
+      var keywords = snapshot.val();
+      console.log(keywords);
     });
-    */
 
 });
