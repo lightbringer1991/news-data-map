@@ -1,6 +1,9 @@
 /**
  * add Intellectual property data into firebase
  * firebase output format: {<year>: {'australia': <integer>, 'non-australia': <integer>}, ....}
+ * @author Tuan Nguyen (tuanmnguyen91@gmail.com)
+ * @created 2016-07-30
+ * @updated 2016-07-31
  */
 
 var url_patent = 'http://data.gov.au/dataset/6a40d5a7-5886-4a96-8bca-9260ec4479ed/resource/29559ce8-5cf5-42b5-bbc5-fcf8e66e66cb/download/IPGOD101-03022016.csv';

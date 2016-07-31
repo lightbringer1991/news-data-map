@@ -7,6 +7,9 @@
  * 		'latitude' => <lattiude>
  * 		'longitude' => <longitude>
  * }
+ * @author Tuan Nguyen (tuanmnguyen91@gmail.com)
+ * @created 2016-07-30
+ * @updated 2016-07-31
  */
 
 var request = require('request');

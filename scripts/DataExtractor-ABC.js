@@ -7,6 +7,9 @@
  * 		'longitude' => <longitude>,
  * 		'thumbnail' => <thumbnail url>
  * }
+ * @author Tuan Nguyen (tuanmnguyen91@gmail.com)
+ * @created 2016-07-30
+ * @updated 2016-07-31
  */
 
 var url = 'https://data.gov.au/dataset/3fd356c6-0ad4-453e-82e9-03af582024c3/resource/3182591a-085a-465b-b8e5-6bfd934137f1/download/Localphotostories2009-2014-JSON.json';
