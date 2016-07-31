@@ -37,58 +37,65 @@
   </head>
   <body>
     <div class="container">
-        <div class="jumbotron row">
-            <h1>News Data Mashup</h1>
-            <p>Instructions</p>
-            <ol>
-                <li>
-                    Once markers have loaded click on a marker to show information about an ABC news item
-                </li>
-                <li>
-                    Clicking on a story title will take you to the news page on abc.net.au
-                </li>
-            </ol>
-        </div>
-
-        <div class='row'>
-            <div class='col-xs-4 col-sm-3 col-md-2'>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="events" checked />
-                        Events
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="accidents" />
-                        Accidents
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="disasters" />
-                        Disasters
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="sciences" />
-                        Science Breakthrough
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="mysteries" />
-                        Mysterious events
-                    </label>
-                </div>
-            </div>
-            <div class='col-xs-8 col-sm-9 col-md-10' id="map" style="height: 600px;">
-
+        <br />
+        <div class='col-sm-12'>
+            <div class="jumbotron">
+                <h1>News Data Mashup</h1>
+                <p>Instructions</p>
+                <ol>
+                    <li>
+                        Once markers have loaded click on a marker to show information about an ABC news item
+                    </li>
+                    <li>
+                        Clicking on a story title will take you to the news page on abc.net.au
+                    </li>
+                </ol>
             </div>
         </div>
 
-        <!-- <div id="map" style="height: 800px;"></div> -->
+        <div class='col-sm-2'>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Data Filters</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="events" checked />
+                            Events
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="accidents" />
+                            Accidents
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="disasters" />
+                            Disasters
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="sciences" />
+                            Science Breakthroughs
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="mysteries" />
+                            Mysterious events
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='col-sm-10'>
+            <div id="map" style="height: 600px;"></div>
+        </div>
 
     </div>
 
