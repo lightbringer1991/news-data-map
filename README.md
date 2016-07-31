@@ -24,6 +24,7 @@ Our Govhack project page: [News Data Mashup](https://2016.hackerspace.govhack.or
 * [Firebase API](https://firebase.google.com/)
 * [ABC news API](https://developers.digital.abc.net.au/2016/07/28/the-abc-gateway-api-and-govhack/)
 * [News Corp API](http://portal.govhack.org/datasets/2016/australia/newscorp/news-corp-content-api-%28capi%29-sa.html)
+* [WMS Service](https://data.gov.au/dataset/abc-local-stations/resource/5b173304-d5f3-4882-bbae-b22449944c30)
 
 ## Used libraries:
 * [Leaflet](http://leafletjs.com/)
