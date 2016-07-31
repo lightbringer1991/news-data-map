@@ -82,17 +82,22 @@ $(document).ready(function() {
                 shadowAnchor: [22, 94]
             });
             loadMap(map, dataRef, icon);
-            addIPInformation();
+            if ($(this).val() == 'sciences') {
+                addIPInformation();
+            }
         });
     }
 
+    /**
+     * only add Intellectual property on science markers
+     */
     function addIPInformation() {
         var dataRef = firebase.database().ref('IP');
         var yearRegex = /<p>Date: \d{1,2}\/\d{1,2}\/(\d{4})<\/p>/;
         dataRef.on('child_added', function(snapshot) {
             var item = snapshot.val();
             map.eachLayer(function(layer) {
-                if (layer.options.pane == 'markerPane') {
+                if ((layer.options.pane == 'markerPane') && (layer._icon.attributes.src.nodeValue.indexOf('sciences') !== -1)) {
                     var matches = yearRegex.exec(layer.getPopup().getContent());
                     if ((matches !== null) && (item[matches[1]] != null)) {
                         layer.getPopup().setContent(layer.getPopup().getContent() + 
