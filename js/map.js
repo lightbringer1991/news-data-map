@@ -83,9 +83,6 @@ $(document).ready(function() {
             if ($(this).val() == 'sciences') {
                 addIPInformation();
             }
-            if ($(this).val() == 'accidents') {
-                addCrimeInformation();
-            }
         });
     }
 
@@ -112,21 +109,14 @@ $(document).ready(function() {
         });
     }
 
-    function addCrimeInformation() {
-        var dataRef = firebase.database().ref('crime');
-        var yearRegex = /<p>Date: \d{1,2}\/(\d{1,2})\/(\d{4})<\/p>/;
-        dataRef.on('child_added', function(snapshot) {
-            var item = snapshot.val();
-            map.eachLayer(function(layer) {
-                if ((layer.options.pane == 'markerPane') && (layer._icon.attributes.src.nodeValue.indexOf('accidents') !== -1)) {
-                    var matches = yearRegex.exec(layer.getPopup().getContent());
-                    if ((matches != null) && (item[matches[2] + '-' + matches[1]] != null)) {
-                        layer.getPopup().setContent(layer.getPopup().getContent() + 
-                            '<p>Total crime committed in ' + matches[1] + '/' + matches[2] + ': <b>' + item[matches[2] + '-' + matches[1]] + '</b></p>'
-                        );
-                    }
-                }
-            });            
-        });        
-    }
+    /*
+     *
+     *
+     */
+    var url = 'https://data.gov.au/geoserver/ows?';
+    var wmsLayer = L.tileLayer.wms(url, {
+        layers: 'abc-local-stations:ckan_d534c0e9_a9bf_487b_ac8f_b7877a09d162',
+        format: 'image/png',
+        transparent: true,
+    }).addTo(map);
 });
