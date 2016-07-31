@@ -5,7 +5,7 @@ $(document).ready(function() {
      * Initialize map
      *
      */
-    var map = L.map('map').setView([-37.560906, 143.828050], 5);
+    var map = L.map('map').setView([-25.987542, 135.501661], 4);
     var markerList = [];
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -100,14 +100,14 @@ $(document).ready(function() {
                 if ((layer.options.pane == 'markerPane') && (layer._icon.attributes.src.nodeValue.indexOf('sciences') !== -1)) {
                     var matches = yearRegex.exec(layer.getPopup().getContent());
                     if ((matches !== null) && (item[matches[1]] != null)) {
-                        layer.getPopup().setContent(layer.getPopup().getContent() + 
+                        layer.getPopup().setContent(layer.getPopup().getContent() +
                             '<p>Granted Patent Intellectual Property summary in ' + matches[1] + ':</p>' +
                             '<i>Australian IP: ' + item[matches[1]]['australia'] + '</i><br />' +
                             '<i>Non Australian IP: ' + item[matches[1]]['non-australia'] + '</i>'
-                        );                        
+                        );
                     }
                 }
-            });            
+            });
         });
     }
 });
