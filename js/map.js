@@ -58,7 +58,7 @@ $(document).ready(function() {
         return marker = L.marker([data.latitude, data.longitude], { icon: icon }).addTo(mapObj)
             .bindPopup( '<p>Story Title: <a href="' + data.link + '" target="_blank"><strong>' + data.title + '</strong></a></p>' +
                             '<p>Date: ' + dateString + '</p>' +
-                            '<img class="img-responsive" src="' + data.thumbnail + '">'
+                            '<img class="img-responsive" src="' + data.thumbnail + '" />'
             );
     }
 
@@ -82,6 +82,32 @@ $(document).ready(function() {
                 shadowAnchor: [22, 94]
             });
             loadMap(map, dataRef, icon);
+            if ($(this).val() == 'sciences') {
+                addIPInformation();
+            }
+        });
+    }
+
+    /**
+     * only add Intellectual property on science markers
+     */
+    function addIPInformation() {
+        var dataRef = firebase.database().ref('IP');
+        var yearRegex = /<p>Date: \d{1,2}\/\d{1,2}\/(\d{4})<\/p>/;
+        dataRef.on('child_added', function(snapshot) {
+            var item = snapshot.val();
+            map.eachLayer(function(layer) {
+                if ((layer.options.pane == 'markerPane') && (layer._icon.attributes.src.nodeValue.indexOf('sciences') !== -1)) {
+                    var matches = yearRegex.exec(layer.getPopup().getContent());
+                    if ((matches !== null) && (item[matches[1]] != null)) {
+                        layer.getPopup().setContent(layer.getPopup().getContent() + 
+                            '<p>Granted Patent Intellectual Property summary in ' + matches[1] + ':</p>' +
+                            '<i>Australian IP: ' + item[matches[1]]['australia'] + '</i><br />' +
+                            '<i>Non Australian IP: ' + item[matches[1]]['non-australia'] + '</i>'
+                        );                        
+                    }
+                }
+            });            
         });
     }
 });
