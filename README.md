@@ -12,13 +12,13 @@ Our Govhack project page: [News Data Mashup](https://2016.hackerspace.govhack.or
 ## Installation
 * Demo is live [here](https://peterplucinski.github.io/news-data-map/)
 * If you want to run the project locally, please follow the steps:
-..* ensure that nodejs and npm is installed in your target machine
-..* clone our project
-..* create a Firebase database
-..* change database settings in scripts/DataExtractor-*.js files
-..* run scripts/DataExtractor-*.js scripts to populate datae into your Firebase database (you may need to install extra nodejs dependencies)
-..* change database settings in js/map.js
-..* enjoy the visual data
+	* ensure that nodejs and npm is installed in your target machine
+	* clone our project
+	* create a Firebase database
+	* change database settings in scripts/DataExtractor-*.js files
+	* run scripts/DataExtractor-*.js scripts to populate datae into your Firebase database (you may need to install extra nodejs dependencies)
+	* change database settings in js/map.js
+	* enjoy the visual data
 
 ## Used APIs:
 * [Firebase API](https://firebase.google.com/)
