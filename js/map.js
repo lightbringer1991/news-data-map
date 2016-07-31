@@ -5,7 +5,7 @@ $(document).ready(function() {
      * Initialize map
      *
      */
-    var map = L.map('map').setView([-37.560906, 143.828050], 5);
+    var map = L.map('map').setView([-25.987542, 135.501661], 4);
     var markerList = [];
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -75,11 +75,9 @@ $(document).ready(function() {
             var dataRef = firebase.database().ref($(this).val()).limitToLast(100);
             var icon = L.icon({
                 iconUrl: 'images/marker_' + $(this).val() + '.png',
-                iconSize: [25, 41],
-                iconAnchor: [22, 94],
-                popupAnchor: [-3, -76],
-                shadowSize: [68, 95],
-                shadowAnchor: [22, 94]
+                iconSize: [25, 34],
+                iconAnchor: [12.5, 34],
+                popupAnchor: [0, -34],
             });
             loadMap(map, dataRef, icon);
             if ($(this).val() == 'sciences') {
@@ -103,14 +101,14 @@ $(document).ready(function() {
                 if ((layer.options.pane == 'markerPane') && (layer._icon.attributes.src.nodeValue.indexOf('sciences') !== -1)) {
                     var matches = yearRegex.exec(layer.getPopup().getContent());
                     if ((matches !== null) && (item[matches[1]] != null)) {
-                        layer.getPopup().setContent(layer.getPopup().getContent() + 
+                        layer.getPopup().setContent(layer.getPopup().getContent() +
                             '<p>Granted Patent Intellectual Property summary in ' + matches[1] + ':</p>' +
                             '<i>Australian IP: ' + item[matches[1]]['australia'] + '</i><br />' +
                             '<i>Non Australian IP: ' + item[matches[1]]['non-australia'] + '</i>'
-                        );                        
+                        );
                     }
                 }
-            });            
+            });
         });
     }
 

@@ -10,6 +10,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
     <link rel="stylesheet" href="stylesheets/custom.css" />
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,58 +37,65 @@
   </head>
   <body>
     <div class="container">
-        <div class="jumbotron row">
-            <h1>News Data Mashup</h1>
-            <p>Instructions</p>
-            <ol>
-                <li>
-                    Once markers have loaded click on a marker to show information about an ABC news item
-                </li>
-                <li>
-                    Clicking on a story title will take you to the news page on abc.net.au
-                </li>
-            </ol>
-        </div>
-
-        <div class='row'>
-            <div class='col-xs-4 col-sm-3 col-md-2'>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="events" checked />
-                        Events
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="accidents" />
-                        Accidents
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="disasters" />
-                        Disasters
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="sciences" />
-                        Science Breakthrough
-                    </label>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="filter" value="mysteries" />
-                        Mysterious events
-                    </label>
-                </div>
-            </div>
-            <div class='col-xs-8 col-sm-9 col-md-10' id="map" style="height: 800px;">
-                
+        <br />
+        <div class='col-sm-12'>
+            <div class="jumbotron">
+                <h1>News Data Mashup</h1>
+                <p>Instructions</p>
+                <ol>
+                    <li>
+                        Once the map and markers have loaded click on a marker to show information about a particular event
+                    </li>
+                    <li>
+                        Clicking on a story title will take you to the news/evetns item on the web
+                    </li>
+                </ol>
             </div>
         </div>
 
-        <!-- <div id="map" style="height: 800px;"></div> -->
+        <div class='col-sm-2'>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Data Filters</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="events" checked />
+                            Events
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="accidents" />
+                            Accidents
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="disasters" />
+                            Disasters
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="sciences" />
+                            Science Breakthroughs
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="filter" value="mysteries" />
+                            Mysterious events
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='col-sm-10'>
+            <div id="map" style="height: 600px;"></div>
+        </div>
 
     </div>
 
